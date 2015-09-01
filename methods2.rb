@@ -60,14 +60,63 @@ module Methods2
 
 	# TODO - write in_order?
 
-	# TODO - write less_by_ten?
-	
+	def in_order?(a, b, c, bOk)
+		if b > a || c > b
+			return true
+		else
+			if bOk && b < a
+				return true
+			else
+				return false
+			end
+		end
+	end
+
+	def less_by_ten?(a, b, c)
+		if (a + 10) < b || (a + 10) < c || (b + 10) < c || (b + 10) < a || (c + 10) < b || (c + 10) < a
+			return true
+		else
+			return false
+		end
+	end
+
 	# TODO - write fizz_string
+	def fizz_string(string)
+		if string.start_with?("F") || string.start_with?("F")
+			if string.end_with?("B") || string.end_with?("b")
+				return "FizzBuzz"
+			else
+				return "Fizz"
+			end
+		elsif string.start_with?("B") || string.start_with?("b")
+			return "Buzz"
+		else
+			return string			
+		end
+	end
 
 	# TODO - write first_last_six?
+	def first_last_six(garr)
+		if garr[0] == 6 || garr[-1] == 6
+			return true
+		else
+			return false
+		end
+	end
 
 	# TODO - write rotate_left
+	def rotate_left(gearr)
+		a = gearr.shift
+		gearr[2] = a
+		return gearr
+	end
 
 	# TODO - write double23?
-
+	def double23(rrarr)
+		if rrarr.first == 2 && rrarr.last == 2 || rrarr.first == 3 || rrarr.last == 3
+			return true
+		else
+			return false
+		end		
+	end
 end
